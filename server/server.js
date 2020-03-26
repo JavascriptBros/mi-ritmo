@@ -4,6 +4,8 @@ const bodyParse = require('body-parser');
 
 const app = express();
 
+const songsRoutes = require('./api/routes/songs')
+
 const PORT = process.env.PORT || 5000;
 
 // mongoose.Promise = global.Promise;
@@ -12,11 +14,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(bodyParse.json());
 
-app.use((req, res, next) => {
-    res.status(200).json({
-        message: 'It works'
-    })
-})
+app.use('/songs', songsRoutes);
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
