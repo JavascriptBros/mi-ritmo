@@ -16,4 +16,17 @@ router.get('/:songId', (req, res, next) => {
     })
 })
 
+router.post('/', (req, res, next) => {
+    const song = {
+        title: req.body.title,
+        artist: req.body.artist
+    };
+    if(song){
+        res.status(201).json({
+            message: 'GET song with id:' + req.params.songId,
+            createdSong: song
+        })
+    }
+})
+
 module.exports = router;
