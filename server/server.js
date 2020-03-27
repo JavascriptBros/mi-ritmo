@@ -12,12 +12,20 @@ app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
 });
 
-// mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 
-// mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost:27017/mi-ritmo`);
+mongoose.connect(process.env.MONGODB_URI || 
+                `mongodb://localhost:27017/mi-ritmo`, 
+                {
+                    useNewUrlParser :true,
+                    useUnifiedTopology: true
+                });
 
 app.use(bodyParse.json());
 
+/**************************************
+ * CORS handling
+ *************************************/
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
@@ -29,6 +37,10 @@ app.use((req, res, next) => {
 })
 
 app.use('/songs', songsRoutes);
+
+/********************
+ * Error handling
+ *******************/
 
 app.use((req, res, next) => {
     const error = new Error('Not Found');
