@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 //import Loadable from "react-loadable";
-import './MainApp.css';
-import { Router, Link } from '@reach/router';
-import Home from './Home';
+import { Router, Link } from "@reach/router";
+import Home from "./pages/Home";
 //import Loader from "./Loader"
 //import MyProfile from "./MyProfile"
 

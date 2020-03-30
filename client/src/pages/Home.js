@@ -1,27 +1,37 @@
-import React, { Component } from 'react';
-import './HomePage.css';
+import React from "react";
+import "./Styling/Home.css";
+import Button from "react-bootstrap/Button";
 
-class Home extends Component {
-  render() {
-    return (
-      <div className="Home-page">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+function Home() {
+  const authenticateUser = () => {
+    console.log("Authenticate user now!");
+  };
+  return (
+    <div className="Home-page">
+      <div className="Auth-container">
+        <ul className="Auth-list">
+          <li>Log in</li>
+          <li>Sign up</li>
+        </ul>
       </div>
-    );
-  }
+      <div className="Home-page-body">
+        <h1 className="App-title"> mi ritmo </h1>
+        <Button
+          onClick={() => {
+            authenticateUser();
+          }}
+          variant="light"
+        >
+          Find your ritmo...
+        </Button>
+      </div>
+      <footer>
+        <ul className="Auth-list">
+          <li>Help</li>
+        </ul>
+      </footer>
+    </div>
+  );
 }
 
 export default Home;
