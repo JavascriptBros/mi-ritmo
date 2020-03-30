@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
-import logo from './';
+//import Loadable from "react-loadable";
 import './MainApp.css';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Router, Link } from '@reach/router';
 import Home from './Home';
+//import Loader from "./Loader"
+//import MyProfile from "./MyProfile"
+
+//TODO: This below is for top level code splitting. Meaning only load on demand.
+// const MyProfile = Loadable({
+//   loader: () => import("./MyProfile"),
+//   loading: Loader
+// })
 
 class MainApp extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <div>
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/about">{/* <About /> */}</Route>
-            <Route path="/dashboard">{/* <Dashboard /> */}</Route>
-          </Switch>
-        </div>
-      </BrowserRouter>
+      <Router>
+        <Home path="/" />
+        {/* <MyProfile path="/myprofile"/> */}
+      </Router>
     );
   }
 }
