@@ -5,6 +5,8 @@ const bodyParse = require("body-parser");
 const app = express();
 
 const songsRoutes = require("./api/routes/songs");
+const playlistsRoutes = require("./api/routes/playlists");
+const userRoutes = require("./api/routes/user");
 
 const PORT = process.env.PORT || 5000;
 
@@ -42,6 +44,8 @@ app.use((req, res, next) => {
 });
 
 app.use("/songs", songsRoutes);
+app.use("/playlists", playlistsRoutes);
+app.use("/user", userRoutes);
 
 /********************
  * Error handling
