@@ -1,0 +1,43 @@
+body {
+  background-color: black;
+}
+.Auth-container {
+  display: flex;
+  margin: 2em 1em;
+}
+
+.Auth-list {
+  width: 180px;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-between;
+  margin-left: auto;
+  color: white;
+}
+
+/* .Auth-list > li {
+ 
+} */
+
+.Home-page-body {
+  margin: 20% auto;
+  text-align: center;
+}
+
+.App-title {
+  color: #ff781f;
+  font-family: "Kaushan Script", cursive;
+  font-size: 66px;
+}
+
+Button {
+  min-width: 251px;
+  margin-top: 3em;
+}
+
+Button:hover {
+  background-color: black !important;
+  border: 1px solid #ff781f !important;
+  color: #ff781f !important;
+}
