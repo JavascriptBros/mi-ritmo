@@ -21,7 +21,8 @@ mongoose.connect(
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false
+    useFindAndModify: false,
+    useCreateIndex: true,
   }
 );
 
@@ -61,7 +62,7 @@ app.use((error, req, res, next) => {
   res.status(error.status || 5000);
   res.json({
     error: {
-      message: error.message
-    }
+      message: error.message,
+    },
   });
 });
