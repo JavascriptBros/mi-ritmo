@@ -1,0 +1,6 @@
+{
+  "env": {
+    "MONGODB_URI": "mongodb+srv://mi-ritmo:mi-ritmo@mi-ritmo-f0huv.mongodb.net/test?retryWrites=true&w=majority",
+    "JWT_KEY": "mi-ritmo-secret-key"
+  }
+}
